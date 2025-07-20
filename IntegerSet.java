@@ -47,7 +47,7 @@ public class IntegerSet {
             CheckRep();
         } catch (RuntimeException e) {
             System.out.println("Failed to remove " + e.getMessage());
-            Numbers.add(x); // rollback กลับ (อาจไม่แม่นเสมอถ้ามีหลายตัวเลขเท่ากัน)
+            Numbers.add(x);
         }
     }
 
