@@ -30,7 +30,12 @@ public class IntegerSet {
      */
     public void add(Integer x){
         Numbers.add(x);
-        CheckRep();
+        try {
+            CheckRep();
+        } catch (RuntimeException e) {
+            System.out.println("Failed to add: " + e.getMessage());
+            Numbers.remove(x);
+        }
     }
     /**
      * ลบเลขออกในเซต
@@ -38,7 +43,12 @@ public class IntegerSet {
      */
     public void remove(Integer x){
         Numbers.remove(x);
-        CheckRep();
+        try {
+            CheckRep();
+        } catch (RuntimeException e) {
+            System.out.println("Failed to remove " + e.getMessage());
+            Numbers.add(x); // rollback กลับ (อาจไม่แม่นเสมอถ้ามีหลายตัวเลขเท่ากัน)
+        }
     }
 
     /**

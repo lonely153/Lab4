@@ -31,7 +31,7 @@ public class IntegerSetTest {
             failed++;
         }
 
-        //Test 3: ตัวซ้ำ
+        //Test 3: ตัวซ้ำ(Exception)
         System.out.println("\n--- Testing Dup ---");
         set1.add(3);
         String expected3 = "[2, 3]";
@@ -42,12 +42,12 @@ public class IntegerSetTest {
             System.out.println("FAILED: Expected " + expected3 + " but got " + set1.toString());
             failed++;
         }
+        
         //Test 4: ตรวจสอบ
         System.out.println("\n--- Checking ---");
-        set1.add(3);
         String expected4 = "[2, 3]";
-        if () {
-            System.out.println("PASSED: Dup works correctly.");
+        if (set1.toString().equals(expected4)) {
+            System.out.println("PASSED.");
             passed++;
         } else {
             System.out.println("FAILED: Expected " + expected4 + " but got " + set1.toString());
